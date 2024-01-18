@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	svc := NewLoggingService(&priceFetcher{})
+	svc := NewLoggingService(NewMetricService(&priceFetcher{}))
 
 	price, err := svc.FetchPrice(context.Background(), "ETH")
 	if err != nil {
