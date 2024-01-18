@@ -25,7 +25,7 @@ func MockPriceFetcher(ctx context.Context, ticker string) (float64, error) {
 	price, ok := cryptoPriceMocks[ticker]
 
 	if !ok {
-		return price, fmt.Errorf("the given ticket (%s) isn't supported", ticker)
+		return price, fmt.Errorf("the given ticker (%s) isn't supported", ticker)
 	}
 
 	return price, nil
